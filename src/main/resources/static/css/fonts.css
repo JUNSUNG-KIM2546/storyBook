@@ -1,0 +1,51 @@
+@charset "utf-8";
+
+/* 폰트 설정 시작 */
+
+/* Pretendard 글꼴 시작 */
+@font-face {
+    font-family:'PretendardR';
+    src:url('../fonts/Pretendard-Regular.woff2') format('woff2'), 
+        url('../fonts/Pretendard-Regular.woff') format('woff'),
+        url('../fonts/Pretendard-Regular.ttf') format('truetype'),
+        url('../fonts/Pretendard-Regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family:'PretendardMed';
+    src:url('../fonts/Pretendard-Medium.woff2') format('woff2'), 
+        url('../fonts/Pretendard-Medium.woff') format('woff'),
+        url('../fonts/Pretendard-Medium.ttf') format('truetype'),
+        url('../fonts/Pretendard-Medium.otf') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family:'PretendardSB';
+    src:url('../fonts/Pretendard-SemiBold.woff2') format('woff2'), 
+        url('../fonts/Pretendard-SemiBold.woff') format('woff'),
+        url('../fonts/Pretendard-SemiBold.ttf') format('truetype'),
+        url('../fonts/Pretendard-SemiBold.otf') format('opentype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family:'PretendardB';
+    src:url('../fonts/Pretendard-Bold.woff2') format('woff2'), 
+        url('../fonts/Pretendard-Bold.woff') format('woff'),
+        url('../fonts/Pretendard-Bold.ttf') format('truetype'),
+        url('../fonts/Pretendard-Bold.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+}
+/* Pretendard 글꼴 종료 */
+
+/* 폰트 설정 종료 */
+
+body {
+    font-family:'PretendardMed';
+}

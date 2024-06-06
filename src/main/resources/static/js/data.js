@@ -1,0 +1,1 @@
+const http = `http://`;const address = `118.216.255.65`;const port = `:58080/`;const url = http+address+port;const SignSumryCreateAct = url+"SignNuria/SignSumryCreateAct.api";const etriKsl = url+"SignNuria/etriKsl.api";const sumryModify = url+"SignNuria/ksl/sumryModify.api";

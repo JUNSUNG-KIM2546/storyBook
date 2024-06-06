@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>알잘딱깔센 동화책</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+        /* 네비게이션 바 스타일 */
+        .navbar {
+            width: 100%;
+            background-color: #6200ea;
+            overflow: hidden;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+        }
+        .navbar a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+        .navbar a:hover {
+            background-color: #3700b3;
+        }
+        /* 컨테이너 스타일 */
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            padding-top: 80px; /* 네비게이션 바 높이 고려 */
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .content {
+            display: flex;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            max-width: 900px;
+            overflow: hidden;
+        }
+        .image-section {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f9f9f9;
+        }
+        .image-section img {
+            max-width: 100%;
+            height: auto;
+        }
+        .text-section {
+            flex: 1;
+            padding: 20px;
+        }
+        .text-section h1 {
+            margin-top: 0;
+        }
+        /* 옵션 리스트 스타일 */
+        .options {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .options li {
+            padding: 10px;
+            border: 1px solid #ddd;
+            margin-top: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .options li:hover {
+            background-color: #f0f0f0;
+        }
+        .options li.selected {
+            border: 2px solid #6200ea;
+            background-color: #e8eaf6;
+        }
+        /* 버튼 컨테이너 스타일 */
+        .button-container {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .button-container button {
+            padding: 10px 20px;
+            background-color: #6200ea;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .button-container button:hover {
+            background-color: #3700b3;
+        }
+        /* 팝업 오버레이 스타일 */
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+        }
+        /* 팝업 스타일 */
+        .popup {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+        .popup h2 {
+            margin-top: 0;
+        }
+        .popup-buttons {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+        .popup-buttons button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .popup-buttons .cancel-btn {
+            background-color: #ddd;
+        }
+        .popup-buttons .confirm-btn {
+            background-color: #6200ea;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<div class="navbar">
+    <a href="#home">홈</a>
+    <a href="#about">소개</a>
+    <a href="#contact">문의</a>
+</div>
+<div class="container">
+    <div class="header">
+        <h1>어떤 동화책을 만들까요?</h1>
+        <p>만들 동화책의 구성된 언어를 선택할 수 있어요.</p>
+    </div>
+    <div class="content">
+        <div class="image-section">
+            <img src="알잘딱깔센_create1.png" alt="동화책 이미지">
+        </div>
+        <div class="text-section">
+            <ul class="options">
+                <li>한글 동화책<br>이야기가 한글로 이루어진 동화책을 만들어요. 깊고 풍부한 이야기가 가득한 우리말 동화책을 만들 수 있어요.</li>
+                <li>영어+한글 동화책<br>영어로 쓰인 이야기에 한글 설명이 붙은 동화책을 만들어요. 동화책을 만들면서 재미와 영어 공부를 동시에 잡을 수 있어요.</li>
+                <li>영어 동화책<br>이야기가 영어로 이루어진 동화책을 만들어요. 모든 과정이 영어로 진행되어 영어 상급자에게 추천드려요.</li>
+            </ul>
+            <div class="button-container">
+                <button id="create-book-btn">선택한 동화책으로 만들기</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="popup-overlay" id="popup-overlay">
+    <div class="popup">
+        <h2 id="popup-title">한글 동화책으로 진행합니다.</h2>
+        <p>선택한 동화책 종류는 이후에 변경할 수 없어요.</p>
+        <div class="popup-buttons">
+            <button class="cancel-btn" id="cancel-btn">취소하기</button>
+            <button class="confirm-btn" id="confirm-btn">다음 단계로</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    const options = document.querySelectorAll('.options li');  // 옵션 리스트 항목들을 선택
+    let selectedOption = null;  // 선택된 옵션을 저장할 변수
+
+    options.forEach(option => {  // 각 옵션에 대해 클릭 이벤트 추가
+        option.addEventListener('click', function() {
+            if (selectedOption) {  // 이전에 선택된 옵션이 있으면 클래스 제거
+                selectedOption.classList.remove('selected');
+            }
+            selectedOption = this;  // 현재 선택된 옵션으로 업데이트
+            this.classList.add('selected');  // 선택된 옵션에 클래스 추가
+        });
+    });
+
+    document.getElementById('create-book-btn').addEventListener('click', function() {
+        if (selectedOption) {  // 옵션이 선택된 경우
+            const popupTitle = document.getElementById('popup-title');
+            popupTitle.textContent = selectedOption.textContent.split('\n')[0] + '으로 진행합니다.';  // 팝업 제목 업데이트
+            document.getElementById('popup-overlay').style.display = 'flex';  // 팝업 표시
+        } else {
+            alert('먼저 동화책 종류를 선택해주세요.');  // 선택되지 않은 경우 알림
+        }
+    });
+
+    document.getElementById('cancel-btn').addEventListener('click', function() {
+        document.getElementById('popup-overlay').style.display = 'none';  // 취소 버튼 클릭 시 팝업 숨기기
+    });
+
+    document.getElementById('confirm-btn').addEventListener('click', function() {
+        alert('다음 단계로 이동합니다.');  // 확인 버튼 클릭 시 알림 (여기에 실제 이동 코드를 추가할 수 있음)
+    });
+</script>
+</body>
+</html>
