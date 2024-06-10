@@ -1,0 +1,42 @@
+@charset "UTF-8";
+
+/* 네비게이션 바 스타일 */
+.navbar {
+    width: 100%;
+    background-color: #6200ea;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    display: flex; /* Flexbox 사용 */
+    align-items: center; /* 세로 정렬 */
+}
+.navbar .logoImg {
+    display: flex;
+    align-items: center; /* 이미지 세로 정렬 */
+    margin-left: 20px; /* 좌측 여백 (원하는 경우 조정) */
+}
+.navbar .logoImg img {
+    max-width: 100%; /* 반응형 이미지 */
+    height: auto; /* 이미지 비율 유지 */
+    max-height: 50px; /* 이미지의 최대 높이를 설정하여 navbar의 높이를 넘지 않도록 합니다 */
+}
+.navbar a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+.navbar a:hover {
+    background-color: #3700b3;
+}
+/* 컨테이너 스타일 */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    padding-top: 80px; /* 네비게이션 바 높이 고려 */
+}

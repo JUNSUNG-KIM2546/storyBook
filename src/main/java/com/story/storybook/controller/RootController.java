@@ -21,5 +21,11 @@ public class RootController {
 
         return "create";
     }
+
+    @GetMapping("/context")
+    String context(Model model) {
+
+        return "context";
+    }
 }
 
