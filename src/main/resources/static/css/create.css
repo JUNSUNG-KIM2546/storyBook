@@ -28,6 +28,9 @@ body {
 .image-section img {
     max-width: 100%;
     height: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
 }
 .text-section {
     flex: 1;

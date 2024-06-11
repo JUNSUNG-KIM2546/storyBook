@@ -22,13 +22,13 @@
     </div>
     <div class="content">
         <div class="image-section">
-            <img src="알잘딱깔센_create1.png" alt="동화책 이미지">
+            <img id="ExBookImg" src="/img/ExCreateBook/0.jpg" alt="동화책 이미지">
         </div>
         <div class="text-section">
             <ul class="options">
-                <li>한글 동화책<br>이야기가 한글로 이루어진 동화책을 만들어요. 깊고 풍부한 이야기가 가득한 우리말 동화책을 만들 수 있어요.</li>
-                <li>영어+한글 동화책<br>영어로 쓰인 이야기에 한글 설명이 붙은 동화책을 만들어요. 동화책을 만들면서 재미와 영어 공부를 동시에 잡을 수 있어요.</li>
-                <li>영어 동화책<br>이야기가 영어로 이루어진 동화책을 만들어요. 모든 과정이 영어로 진행되어 영어 상급자에게 추천드려요.</li>
+                <li>한글 동화책<br><p>이야기가 한글로 이루어진 동화책을 만들어요. 깊고 풍부한 이야기가 가득한 우리말 동화책을 만들 수 있어요.</p></li>
+                <li>영어+한글 동화책<br><p>영어로 쓰인 이야기에 한글 설명이 붙은 동화책을 만들어요. 재미와 영어 공부를 동시에 할 수 있어요.</p></li>
+                <li>영어 동화책<br><p>이야기가 영어로 이루어진 동화책을 만들어요. 모든 과정이 영어로 진행되어 영어 상급자에게 추천드려요.</p></li>
             </ul>
             <div class="button-container">
                 <button id="create-book-btn">선택한 동화책으로 만들기</button>
@@ -79,8 +79,31 @@
     document.getElementById('confirm-btn').addEventListener('click', function() {
         alert('다음 단계로 이동합니다.');  // 확인 버튼 클릭 시 알림 (여기에 실제 이동 코드를 추가할 수 있음)
         location.href = "/context";
-
     });
+
+    // ExCreateImg 배열
+    const ExImg = [
+        "0.jpg",
+        "1.jpg",
+        "2.jpg",
+        "3.jpg",
+        "4.jpg",
+        "5.jpg",
+        "6.jpg",
+        "7.jpg",
+        "8.jpg",
+        "9.jpg"
+    ]
+    let slideIndex = 0;
+    const imgElement = document.getElementById('ExBookImg');    // id가 ExBookImg인것
+
+    function ImgShowSlide() {
+        slideIndex = (slideIndex + 1) % ExImg.length; // 인덱스 증가 및 순환
+        imgElement.src = '/img/ExCreateBook/' + ExImg[slideIndex]; // IMG Slide
+    }
+
+    // 일정 시간마다 ImgShowSlide 함수 호출
+    setInterval(ImgShowSlide, 5000);    // 5초
 </script>
 </body>
 </html>

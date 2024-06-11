@@ -13,7 +13,7 @@ public class RootController {
     @GetMapping("/")
     String home(Model model) {
 
-        return "create";
+        return "home";
     }
 
     @GetMapping("/create")
