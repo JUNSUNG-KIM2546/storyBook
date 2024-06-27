@@ -10,29 +10,32 @@
     </style>
 </head>
 <body>
+    <header>
+        <!-- (타임리프)네비게이션 바 인클루드 -->
+        <th:block th:replace="~{/nav.html}"></th:block>
+    </header>
 
-<!-- (타임리프)네비게이션 바 인클루드 -->
-<th:block th:replace="~{/nav.html}"></th:block>
-
-<div class="container">
-    <div class="header">
-        <h1>떠오르는 스토리를 자유롭게 적어주세요.</h1>
-        <p>AI 스토리 교실이 적은 내용을 토대로 줄거리를 만들어드려요.</p>
-    </div>
-    <div class="book-background">
-        <img src="/img/bookBackGround.png" alt="동화책 배경">
-        <div class="input-form">
-            <textarea placeholder="동화책의 내용을 적어주세요."></textarea>
-            <div class="examples">
-                예시1) 소피아가 신비로운 마법의 숲을 탐험하며 친구들과 함께 숲을 지켜내는 이야기<br>
-                예시2) 은쟁반은 : '곰디언 (함께 즐기기) : 연이 친구 곰이와 함께 숲을 탐험하다.<br>
-                예시3) 관심과 일을 주제로 하고 주인공은 고양이가 나쁜 악당을 무찌르면서 끝낸다
+    <main>
+        <div class="container">
+            <div class="header">
+                <h1>떠오르는 스토리를 자유롭게 적어주세요.</h1>
+                <p>AI 스토리 교실이 적은 내용을 토대로 줄거리를 만들어드려요.</p>
             </div>
-            <div class="button-container">
-                <button>줄거리 생성하기</button>
+            <div class="book-background">
+                <img src="/img/bookBackGround.png" alt="동화책 배경">
+                <div class="input-form">
+                    <textarea placeholder="동화책의 내용을 적어주세요."></textarea>
+                    <div class="examples">
+                        예시1) 소피아가 신비로운 마법의 숲을 탐험하며 친구들과 함께 숲을 지켜내는 이야기<br>
+                        예시2) 은쟁반은 : '곰디언 (함께 즐기기) : 연이 친구 곰이와 함께 숲을 탐험하다.<br>
+                        예시3) 관심과 일을 주제로 하고 주인공은 고양이가 나쁜 악당을 무찌르면서 끝낸다
+                    </div>
+                    <div class="button-container">
+                        <button>줄거리 생성하기</button>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</div>
+    </main>
 </body>
 </html>

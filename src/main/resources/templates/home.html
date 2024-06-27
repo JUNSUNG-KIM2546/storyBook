@@ -6,13 +6,97 @@
     <title>알잘딱깔센 동화책</title>
     <!-- CSS 스타일 불러오기 -->
     <link href="/css/nav.css" rel="stylesheet">
+    <link href="/css/home.css" rel="stylesheet">
 </head>
 <body>
+    <header>
+     <!-- (타임리프)네비게이션 바 인클루드 -->
+     <th:block th:replace="~{/nav.html}"></th:block>
+    </header>
+    <main>
+        <section class="intro">
+            <h1>스스로 만드는 나만의 AI 동화책!</h1>
+            <p>시각적인 흥미와 언어적 능력 향상을 위한 AI 동화책 만들기로 아이의 상상력과 창의력을 발휘하여 자신만의 이야기를 표현해 보세요.</p>
+            <button class="story-btn">📚 스토리 만들기</button>
+        </section>
 
-<!-- (타임리프)네비게이션 바 인클루드 -->
-<th:block th:replace="~{/nav.html}"></th:block>
+        <section class="notice">
+            <h2>공지사항</h2>
+            <div class="notice-content">
+                <p>AI스토리교실 서비스 이용 정책 변경 안내</p>
+                <a href="#">더보기 &gt;</a>
+            </div>
+        </section>
 
+        <section class="gallery">
+            <div class="gallery-item">
+                <img src="/img/story1.png" alt="동화책 이미지">
+                <div class="gallery-info">
+                    <h3>The Hill Behind ..</h3>
+                    <p>wave</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="/img/story2.png" alt="동화책 이미지">
+                <div class="gallery-info">
+                    <h3>사고난 기차</h3>
+                    <p>한빛반 정하율</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="/img/story3.png" alt="동화책 이미지">
+                <div class="gallery-info">
+                    <h3>영애와 규리 화해하기</h3>
+                    <p>한빛반 이명연</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="/img/story4.png" alt="동화책 이미지">
+                <div class="gallery-info">
+                    <h3>한빛반 딸기농장 가는날</h3>
+                    <p>한빛반 박준영</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="/img/story5.png" alt="동화책 이미지">
+                <div class="gallery-info">
+                    <h3>샌드위치의 기적</h3>
+                    <p>한빛반 김은호</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="/img/story6.png" alt="동화책 이미지">
+                <div class="gallery-info">
+                    <h3>우주 끝의 비밀</h3>
+                    <p>한빛반 김은호</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="/img/story7.png" alt="동화책 이미지">
+                <div class="gallery-info">
+                    <h3>세종대왕의 역활</h3>
+                    <p>한빛반 이태민</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="/img/story8.png" alt="동화책 이미지">
+                <div class="gallery-info">
+                    <h3>거북선의 영웅 이순신</h3>
+                    <p>한빛반 김준수</p>
+                </div>
+            </div>
+        </section>
+    </main>
 
+    <footer>
+        <p>© 2023 AI스토리교실. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="#">회사소개</a>
+            <a href="#">서비스 약관</a>
+            <a href="#">개인정보 보호정책</a>
+            <a href="#">고객센터</a>
+        </div>
+    </footer>
 
 </body>
 </html>
